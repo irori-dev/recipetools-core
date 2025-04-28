@@ -62,7 +62,6 @@ graph TD
   beef["材料: 牛肉薄切り"]
   beef --> step1
   step1["炒める(beef)\n0-5min\n累計:5min"]
-  ...
 ```
 
 4. レシピ同士の距離を計算する
