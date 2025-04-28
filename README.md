@@ -1,5 +1,7 @@
 # @recipetools/core
 
+[![npm version](https://img.shields.io/npm/v/@recipetools/core)](https://www.npmjs.com/package/@recipetools/core)
+
 型安全・構造化されたレシピデータを扱うための TypeScript ライブラリです。
 レシピのパース、バリデーション、プロセス図生成、レシピ間の距離計算ができます。
 
