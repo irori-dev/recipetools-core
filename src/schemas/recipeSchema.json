@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Recipe",
+  "type": "object",
+  "required": ["title", "ingredients", "steps"],
+  "properties": {
+    "title": { "type": "string" },
+    "description": { "type": "string" },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "author": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "yield": {
+      "type": "object",
+      "properties": {
+        "quantity": { "type": "number" },
+        "unit": { "type": "string" }
+      }
+    },
+    "ingredients": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "quantity", "unit"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "quantity": { "type": "number" },
+          "unit": { "type": "string" },
+          "preparation": { "type": "string" },
+          "group": { "type": "string" }
+        }
+      }
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "action", "ingredients"],
+        "properties": {
+          "id": { "type": "string" },
+          "action": { "type": "string" },
+          "ingredients": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "tool": { "type": "string" },
+          "duration": { "type": "string" },
+          "canParallel": { "type": "boolean" },
+          "dependsOn": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}
